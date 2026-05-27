@@ -13,11 +13,11 @@
 
 With interactive background processing, live progress tracking via **WebSockets (Socket.IO)**, and an elegant, school-exam-styled output interface featuring **A4-perfect PDF export**, VedaAI delivers an elite experience inspired directly by professional Figma designs.
 
-🔗 **Live Deployment**: [VedaAI Live Demo](https://ai-assessment-creator-beige.vercel.app)
+ **Live Deployment**: [VedaAI Live Demo](https://ai-assessment-creator-beige.vercel.app)
 
 ---
 
-## 🏛️ System Architecture
+## System Architecture
 
 VedaAI is designed as a modular, full-stack monorepo featuring high separation of concerns:
 
@@ -42,25 +42,25 @@ graph TD
 
 ---
 
-## 🚀 Key Features & Highlights
+## Key Features & Highlights
 
-### 📋 1. Highly-Validated Assignment Designer
+### 1. Highly-Validated Assignment Designer
 * Fully structured wizard UI containing validation rules to prevent empty inputs, negative question counts, or invalid point allocations.
 * Support for uploading study materials (PDFs/Text) processed through **Multer** and securely cached via **Cloudinary**, serving as an explicit contextual anchor for Gemini's prompt generator.
 * Granular configuration for due dates, difficulty distribution, specific question types (MCQ, Short Answers, Long Answers, True/False), and custom guidelines.
 
-### ⚡ 2. Real-Time Progress Streamer
+### 2. Real-Time Progress Streamer
 * Background workers handle AI generations asynchronously, avoiding bottleneck blocks on HTTP cycles.
 * Real-time socket rooms stream specific statuses: `Reading document...`, `Planning assignment layout...`, `Generating content...`, `Saving new assignment...`.
 * The client animates an interactive progress bar using an asymptotic loading function that elegantly transitions to `100%` on `job:completed`.
 
-### 📝 3. Structured School-Exam Visualizer
+### 3. Structured School-Exam Visualizer
 * Generates realistic student registration slots (Name, Roll Number, Class/Section).
 * Groups questions perfectly by dynamic Sections (e.g., *Section A: Multiple Choice Questions*, *Section B: Short Answer Questions*).
 * Features visual badges indicating difficulty levels (`Easy` in green, `Moderate` in yellow, `Hard` in red) alongside dedicated points allocation.
 * Complete educational **Answer Key and Explanation Accordion** at the end of the paper, detailing the correct answers alongside pedagogical rationales.
 
-### 📄 4. High-Fidelity A4 PDF Generator
+### 4. High-Fidelity A4 PDF Generator
 To solve typical browser printing failures (where dynamic Tailwind v4 elements are clipped, page dimensions are misaligned, or background tag overlays fail to render), VedaAI utilizes a custom visual rasterization pipeline:
 1. **Targeted Reference**: Binds a React `useRef` hook directly onto the "Master Paper Container."
 2. **Lossless Compilation**: Utilizes `html-to-image` to compile the visual container into a high-density, high-quality PNG data URL.
@@ -69,7 +69,7 @@ To solve typical browser printing failures (where dynamic Tailwind v4 elements a
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 ### Frontend Directory (`/frontend`)
 * **Framework**: Next.js 15+ (App Router)
@@ -92,7 +92,7 @@ To solve typical browser printing failures (where dynamic Tailwind v4 elements a
 
 ---
 
-## 🛠️ Installation & Local Setup
+## Installation & Local Setup
 
 Get VedaAI up and running in your local workspace:
 
@@ -176,7 +176,7 @@ npm run install:all
 
 ---
 
-## 🧪 Seeding & Test Data
+## Seeding & Test Data
 
 If you'd like to seed dummy assessments into MongoDB for immediate inspection without generating new ones, we have included a seeding script.
 
@@ -188,16 +188,7 @@ This populates MongoDB with structured question papers spanning Multiple Subject
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 * **BullMQ queues & Redis Caching**: Scaling background tasks with standalone workers using Redis for strict job isolation.
 * **Interactive Editor**: Allows teachers to click, edit, delete, or regenerate individual questions on the fly before exporting.
 * **Student Mode**: Allow students to join a room, attempt the exam, and have their answers graded automatically using Gemini.
-
----
-
-## 📄 License
-Distributed under the MIT License. See [LICENSE](LICENSE) for more details.
-
----
-
-**Developed with ❤️ by VedaAI Engineering team.**
