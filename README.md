@@ -13,7 +13,8 @@
 
 With interactive background processing, live progress tracking via **WebSockets (Socket.IO)**, and an elegant, school-exam-styled output interface featuring **A4-perfect PDF export**, VedaAI delivers an elite experience inspired directly by professional Figma designs.
 
- **Live Deployment**: [VedaAI Live Demo](https://ai-assessment-creator-beige.vercel.app)
+ **Live Deployment**: [VedaAI Live Deploy link](https://ai-assessment-creator-livid.vercel.app/)
+ **Demo Video**: [VedaAI Demo Video](https://drive.google.com/file/d/1J5aqnz-u72jMXUSjzSagWaOjyAJO9vko/view?usp=sharing)
 
 ---
 
